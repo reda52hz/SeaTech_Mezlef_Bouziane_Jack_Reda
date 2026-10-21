@@ -11,7 +11,7 @@ T1CONbits.TCKPS = 0b01; //Prescaler
 //01 = 1:8 prescale value
 //00 = 1:1 prescale value
 T1CONbits.TCS = 0; //clock source = internal clock
-PR1 = 0x1D4C;
+PR1 = 0x2328;                                               //0x258 = 600 donc 6kHz et 0xFFFF = 65535 donc 57Hz
 IFS0bits.T1IF = 0; // Clear Timer Interrupt Flag
 IEC0bits.T1IE = 1; // Enable Timer interrupt
 T1CONbits.TON = 1; // Enable Timer
@@ -30,8 +30,8 @@ T2CONbits.TCS = 0; // Select internal instruction cycle clock
 T2CONbits.TCKPS = 0b00; // Select 1:1 Prescaler
 TMR3 = 0x00; // Clear 32-bit Timer (msw)
 TMR2 = 0x00; // Clear 32-bit Timer (lsw)
-PR3 = 0x0393; // Load 32-bit period value (msw)
-PR2 = 0x8700; // Load 32-bit period value (lsw)
+PR3 = 1831; // Load 32-bit period value (msw)                 base : 915->0.5Hz |1 830->0.25Hz |457->1Hz
+PR2 = 3584; // Load 32-bit period value (lsw)                 base : 34560->0.5Hz |69 120->0.25Hz | 17280->1Hz
 IPC2bits.T3IP = 0x01; // Set Timer3 Interrupt Priority Level
 IFS0bits.T3IF = 0; // Clear Timer3 Interrupt Flag
 IEC0bits.T3IE = 1; // Enable Timer3 interrupt
