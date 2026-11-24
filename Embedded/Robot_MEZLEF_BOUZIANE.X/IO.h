@@ -14,6 +14,8 @@
 #define LED_ROUGE_2 _LATA10 //pin 40
 #define LED_VERTE_2 _LATH3 //pin 46
 
+#define PWM_ENABLE _LATJ10 //pin 46
+
 
 // Prototypes fonctions
 void InitIO();
